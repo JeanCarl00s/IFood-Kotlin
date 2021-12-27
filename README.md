@@ -5,4 +5,11 @@ Recreate IFood app in Kotlin.
 * Kotlin
 * Android Studio
 
+### Tools ⚙️
+* ViewBinding
+* TabLayout
+
 # ScreenShot
+
+
+
