@@ -1,4 +1,4 @@
-# KotlinFood
+# IFood
 Recreate IFood app in Kotlin.
 
 ### TECHS 💻
