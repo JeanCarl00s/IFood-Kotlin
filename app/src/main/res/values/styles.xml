@@ -3,6 +3,7 @@
 
 
     <style name="MyFoodButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+
         <item name="textAllCaps">false</item>
         <item name="android:fontFamily">@font/roboto</item>
     </style>
