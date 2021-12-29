@@ -14,7 +14,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="R. ABC"
+            style="@style/MyFoodButtonStyle"
+            android:text="R. Rua ABC"
             android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
             android:textSize="13sp"
             />
@@ -36,10 +37,14 @@
         app:tabIndicatorColor="@color/red"
         app:tabSelectedTextColor="@color/red"
         app:tabTextColor="@color/gray"
+        app:tabTextAppearance="@style/MyFoodTabLayoutAppearance"
         />
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/add_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        >
+
+    </androidx.viewpager2.widget.ViewPager2>
+
 </LinearLayout>
