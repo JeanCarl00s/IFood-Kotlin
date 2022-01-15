@@ -16,11 +16,14 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
 
     private var binding: FragmentRestaurantBinding? = null
 
-    private var categoryAdapter = ATAdapter( {
+    private val categoryAdapter = ATAdapter( {
         CategoryView(it)
     })
-    private var bannerAdapter = ATAdapter( {
+    private val bannerAdapter = ATAdapter( {
         BannerView(it)
+    })
+    private val shopAdapter = ATAdapter( {
+        ShopView(it)
     })
 
     private var filters = arrayOf(
@@ -54,6 +57,15 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
             Banner(3, "https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-3.png"),
         )
 
+        shopAdapter.items = arrayListOf(
+            Shop(1,"https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/Logo%20McDonald_MCDON_DRIV15.jpg", "MC Donalds"),
+            Shop(2,"https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/201910292243_94aaf166-84cc-4ebf-a35d-d223be34d01f.png", "Coco Bambu"),
+            Shop(3,"https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/d4a3984f-2b73-4f46-99df-1d6bc79ff293/202001031317_CXpO_i.png", "China Box"),
+            Shop(5,"https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/201801231937__HABIB_VERDE.jpg", "Habibs"),
+            Shop(6,"https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/201906182008_2b157a73-7564-4733-94c1-8d0376e7bb39.png", "Outback"),
+            Shop(7,"https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/afd87cab-7dee-4ed6-88bf-168ceef5bc87/202104232246_vgkL_i.png", "Ohana Acai"),
+        )
+
         binding = FragmentRestaurantBinding.bind(view)
 
         binding?.let {
@@ -62,6 +74,10 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
 
             it.rvBanners.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             it.rvBanners.adapter = bannerAdapter
+
+            it.rvShops.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            it.rvShops.adapter = shopAdapter
+
             it.rvBanners.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                     if (newState == RecyclerView.SCROLL_STATE_IDLE){
