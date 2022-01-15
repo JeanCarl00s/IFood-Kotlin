@@ -24,5 +24,20 @@
         android:id="@+id/rv_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"  />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_banners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingHorizontal="6dp"
+        android:layout_marginTop="12dp"
+        />
+    <LinearLayout
+        android:id="@+id/dots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        />
 
 </LinearLayout>
