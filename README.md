@@ -1,15 +1,18 @@
 # IFood
 Recreate IFood app in Kotlin.
 
-### TECHS 💻
+
+### 📚 Goals
+With this project I studied
+* RecycleView
+* Lists
+* Binding
+
+
+### 💻 TECHS
 * Kotlin
 * Android Studio
 
-### Tools ⚙️
-* ViewBinding
-* TabLayout
-
-# ScreenShot
-
+### 📷 ScreenShot
 
 
