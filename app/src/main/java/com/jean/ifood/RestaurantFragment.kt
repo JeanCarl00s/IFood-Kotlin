@@ -25,6 +25,9 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
     private val shopAdapter = ATAdapter( {
         ShopView(it)
     })
+    private val moreShopAdapter = ATAdapter( {
+        MoreShopView(it)
+    })
 
     private var filters = arrayOf(
         FilterItem(1,"Ordenar", closeIcon = R.drawable.ic_baseline_keyboard_arrow_down_24),
@@ -66,6 +69,15 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
             Shop(7,"https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/afd87cab-7dee-4ed6-88bf-168ceef5bc87/202104232246_vgkL_i.png", "Ohana Acai"),
         )
 
+        moreShopAdapter.items = arrayListOf(
+            MoreShop(1, "https://static-images.ifood.com.br/image/upload/t_high/logosgde/9a16bafe-ac6f-498b-8dd5-fd77474e8c5c/202107041151_StAn_i.jpg", "Dona Gula",5.0, "Doces", 5.0, "60-70", 15.00),
+            MoreShop(2, "https://static-images.ifood.com.br/image/upload/t_high/logosgde/9d352120-8c3b-4fbb-9152-9b5fe8201699/202108111439_xQxA_i.png", "Dela Porto",4.4, "Acai", 3.0, "60-70", 20.00),
+            MoreShop(3, "https://static-images.ifood.com.br/image/upload/t_high/logosgde/2a023fb0-fedc-4a0a-8831-8f13fac92700/201907242027_5NST_i.png", "Formiga Amiga",4.0, "Doces", 1.0, "60-70", 40.00),
+            MoreShop(4, "https://static-images.ifood.com.br/image/upload/t_high/logosgde/5fce6ed6-4626-483b-98ea-5af2e299acae/201906252035_hkE8_i.jpg", "Tentacao",4.3, "Doces", 8.0, "60-70", 25.00),
+            MoreShop(5, "https://static-images.ifood.com.br/image/upload/t_high/logosgde/afd87cab-7dee-4ed6-88bf-168ceef5bc87/202104232246_vgkL_i.png", "Ohana",4.0, "Acai", 1.5, "60-70", 20.00),
+            MoreShop(6, "https://static-images.ifood.com.br/image/upload/t_high/logosgde/68c4dc21-7496-4abe-bc29-bb93636f1d85/202009111454_PNVn_i.png", "Thoscana",3.5, "Grill", 11.5, "60-70", 50.00),
+            )
+
         binding = FragmentRestaurantBinding.bind(view)
 
         binding?.let {
@@ -77,6 +89,9 @@ class RestaurantFragment : Fragment(R.layout.fragment_restaurant) {
 
             it.rvShops.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             it.rvShops.adapter = shopAdapter
+
+            it.rvMoreShops.layoutManager = LinearLayoutManager(requireContext())
+            it.rvMoreShops.adapter = moreShopAdapter
 
             it.rvBanners.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
